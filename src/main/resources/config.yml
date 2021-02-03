@@ -1,0 +1,79 @@
+#_____           _                   ____  _            _
+#|  __ \         | |                 |  _ \| |          | |
+#| |__) |___  ___| |_ ___  _ __ ___  | |_) | | ___   ___| | __
+#|  _  // _ \/ __| __/ _ \| '__/ _ \ |  _ <| |/ _ \ / __| |/ /
+#| | \ \  __/\__ \ || (_) | | |  __/ | |_) | | (_) | (__|   <
+#|_|  \_\___||___/\__\___/|_|  \___| |____/|_|\___/ \___|_|\_\
+#Welcome To RestoreBlock Configuration Files.
+
+
+Restore-Break:
+  #Should Broken Blocks Get Restored?
+  Restore: true
+  #After How Many MilliSeconds Should Broken Block BE replaced?
+  Delay: 3000
+  #Should Broken Blocks Drop Items?
+  Item-Drops: false
+  #Should Players In Creative Mode Bypass?
+  Ignore-Creative: false
+  #Name Of The Worlds That Blocks Should Not Be Restored In.
+  Disabled-Worlds:
+    - example-world
+
+  #What Kind Of Materials Should Not Be Restored?
+  Excluded-Materials:
+    - DOUBLE_PLANT
+
+
+Restore-Place:
+  #Should Placed Blocks Get Restored?
+  Restore: true
+  #After How Many MilliSeconds Should Broken Block BE replaced?
+  Delay: 3000
+  #Should Players In Creative Mode Bypass?
+  Ignore-Creative: false
+  #Name Of The Worlds That Blocks Should Not Be Restored In.
+  Disabled-Worlds:
+    - example-world
+
+  #What Kind Of Materials Should Not Be Restored?
+  Excluded-Materials:
+    - DOUBLE_PLANT
+
+
+Restore-Burn:
+  #Should Burnt Blocks Get Restored?
+  Restore: true
+  #After How Many MilliSeconds Should Broken Block BE replaced?
+  Delay: 3000
+  #Name Of The Worlds That Blocks Should Not Be Restored In.
+  Disabled-Worlds:
+    - example-world
+
+  #What Kind Of Materials Should Not Be Restored?
+  Excluded-Materials:
+    - DOUBLE_PLANT
+
+
+Restore-Explosion:
+  #Should Explosions Get Restored?
+  Restore: true
+  #After How Many MilliSeconds Should Broken Block BE replaced?
+  Delay: 5000
+  #Amount Of Time Between Every Block Regeneration
+  Block-Delay: 25
+  #Should Broken Blocks Drop Items?
+  Item-Drops: false
+  #Name Of The Worlds That Blocks Should Not Be Restored In.
+  Disabled-Worlds:
+    - example-world
+
+  #What Kind Of Materials Should Not Be Restored?
+  Excluded-Materials:
+     - DOUBLE_PLANT
+
+#Global Settings:
+
+#Interval Of All Checks Above Measured In TICKS
+#Please Do Not TOUCH If You Do Not Know What You Are Doing
+Check-Interval: 1

@@ -1,0 +1,21 @@
+name: RestoreBlock
+version: ${project.version}
+main: cipher.restoreblock.RestoreBlock
+authors: [Cipher]
+
+commands:
+  restoreblock:
+    usage: /<command>
+    description: The Main Command Of RestoreBlock Plugin.
+    aliases:
+      - rb
+
+
+permissions:
+  restoreblock.*:
+    children:
+      restoreblock.events.blockbreak: true
+      restoreblock.events.blockplace: true
+      restoreblock.events.bucketempty: true
+      restoreblock.events.update: true
+      restoreblock.commands.reload: true
