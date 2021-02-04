@@ -21,16 +21,12 @@ public final class RestoreBlock extends JavaPlugin {
 
 		new Run(this).registerRunnable();
 
-		new Run(this).CheckUpdate();
-
 		new Run(this).Metrics();
-
 	}
 
 	@Override
 	public void onDisable() {
 
 		new Run(this).restoreOnStop();
-
 	}
 }

@@ -22,7 +22,9 @@ import java.util.List;
 
 public class V_1_8 implements Listener {
 
-	//Block Break Event Handler
+	/*
+	Block break handling section
+	 */
 	@EventHandler
 	public void onBreak(BlockBreakEvent event) {
 
@@ -30,7 +32,7 @@ public class V_1_8 implements Listener {
 		Block block = event.getBlock();
 		BlockState blockState = block.getState();
 		Material material = blockState.getType();
-		Long time = System.currentTimeMillis();
+		Long time = System.currentTimeMillis()/1000;
 		Location loc = block.getLocation();
 		GameMode gameMode = player.getGameMode();
 
@@ -41,7 +43,6 @@ public class V_1_8 implements Listener {
 		if (!(Config.Configuration.getBoolean("Restore-Break.Item-Drops"))) {
 
 			block.setType(Material.AIR);
-
 		}
 
 		if (Config.Configuration.getBoolean("Restore-Break.Restore")) {
@@ -53,14 +54,15 @@ public class V_1_8 implements Listener {
 					if(!(Config.Configuration.getList("Restore-Break.Excluded-Materials").contains(material.toString()))){
 
 						RestoreOnRun.Break_list.add(new AbstractMap.SimpleImmutableEntry<>(blockState, time));
-
 					}
 				}
 			}
 		}
 	}
 
-	//Block Place Event Handler
+	/*
+	Block Place handling section
+	 */
 	@EventHandler
 	public void onPlace(BlockPlaceEvent event) {
 
@@ -68,7 +70,7 @@ public class V_1_8 implements Listener {
 		Block block = event.getBlock();
 		BlockState blockState = block.getState();
 		Material material = blockState.getType();
-		Long time = System.currentTimeMillis();
+		Long time = System.currentTimeMillis()/1000;
 		Location loc = block.getLocation();
 		GameMode gameMode = player.getGameMode();
 
@@ -85,22 +87,22 @@ public class V_1_8 implements Listener {
 					if(!(Config.Configuration.getList("Restore-Place.Excluded-Materials").contains(material.toString()))){
 
 						RestoreOnRun.Place_list.add(new AbstractMap.SimpleImmutableEntry<>(block, time));
-
 					}
-
 				}
 			}
 		}
 	}
 
-	//Water/Lava Place Handler
+	/*
+	Water/Lava flow handling section
+	 */
 	@EventHandler
 	public void onBucketEmpty(PlayerBucketEmptyEvent event) {
 
 		Player player = event.getPlayer();
 		Block block = event.getBlockClicked().getRelative(event.getBlockFace());
 		Location loc = block.getLocation();
-		Long time = System.currentTimeMillis();
+		Long time = System.currentTimeMillis()/1000;
 		GameMode gameMode = player.getGameMode();
 
 		if(Config.Configuration.getBoolean("Restore-Place.Ignore-Creative") && !(gameMode.equals(GameMode.CREATIVE))){ return; }
@@ -114,20 +116,21 @@ public class V_1_8 implements Listener {
 				if (!HasPermission) {
 
 					RestoreOnRun.Place_list.add(new AbstractMap.SimpleImmutableEntry<>(block, time));
-
 				}
 			}
 		}
 	}
 
-	//Block Burn Event Handler
+	/*
+	Block burn handling section
+	 */
 	@EventHandler
 	public void onBurn(BlockBurnEvent event) {
 
 		Block block = event.getBlock();
 		BlockState blockState = block.getState();
 		Material material = blockState.getType();
-		Long time = System.currentTimeMillis();
+		Long time = System.currentTimeMillis()/1000;
 		Location loc = block.getLocation();
 
 		if (Config.Configuration.getBoolean("Restore-Burn.Restore")) {
@@ -137,18 +140,19 @@ public class V_1_8 implements Listener {
 				if(!(Config.Configuration.getList("Restore-Burn.Excluded-Materials").contains(material.toString()))){
 
 					RestoreOnRun.Burn_list.add(new AbstractMap.SimpleImmutableEntry<>(blockState, time));
-
 				}
 			}
 		}
 	}
 
-	//Block Explode Event Handler
+	/*
+	Explosion handling section
+	 */
 	@EventHandler
 	public void onExplode(EntityExplodeEvent event) {
 
 		List<Block> blocks = event.blockList();
-		Long time = System.currentTimeMillis();
+		Long time = System.currentTimeMillis()/1000;
 		Location loc = event.getLocation();
 
 		blocks.sort(Comparator.comparingInt(Block::getY));
@@ -156,7 +160,6 @@ public class V_1_8 implements Listener {
 		if (!(Config.Configuration.getBoolean("Restore-Explosion.Item-Drops"))) {
 
 			event.setYield(0);
-
 		}
 
 		if (Config.Configuration.getBoolean("Restore-Explosion.Restore")) {
@@ -173,7 +176,6 @@ public class V_1_8 implements Listener {
 					if(!(Config.Configuration.getList("Restore-Explosion.Excluded-Materials").contains(material.toString()))){
 
 						RestoreOnRun.Explode_list.add(new AbstractMap.SimpleImmutableEntry<>(blockState, time));
-
 					}
 				}
 			}

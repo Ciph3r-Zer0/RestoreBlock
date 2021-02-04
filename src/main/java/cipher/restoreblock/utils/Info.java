@@ -15,7 +15,6 @@ public class Info {
 	public static String Color(String s) {
 
 		return ChatColor.translateAlternateColorCodes('&', s);
-
 	}
 
 	public static final String Prefix = Color("&bRestoreBlock &8>> ");

@@ -17,7 +17,6 @@ public class RestoreOnStop {
 
 			break_entry.getKey().update(true, false);
 			RestoreOnRun.Break_list.remove(i);
-
 		}
 
 		//Restore Placed Blocks When Server Stops/Restarts
@@ -27,7 +26,6 @@ public class RestoreOnStop {
 
 			Place_entry.getKey().setType(Material.AIR);
 			RestoreOnRun.Place_list.remove(i);
-
 		}
 
 		//Restore Burnt Blocks When Server Stops/Restarts
@@ -37,7 +35,6 @@ public class RestoreOnStop {
 
 			Burn_entry.getKey().update(true, false);
 			RestoreOnRun.Burn_list.remove(i);
-
 		}
 
 		//Block Explode Restoration Event
@@ -47,7 +44,6 @@ public class RestoreOnStop {
 
 			entry.getKey().update(true, false);
 			RestoreOnRun.Explode_list.remove(i);
-
 		}
 	}
 
@@ -57,6 +53,5 @@ public class RestoreOnStop {
 		RestoreOnRun.Place_list.clear();
 		RestoreOnRun.Burn_list.clear();
 		RestoreOnRun.Explode_list.clear();
-
 	}
 }

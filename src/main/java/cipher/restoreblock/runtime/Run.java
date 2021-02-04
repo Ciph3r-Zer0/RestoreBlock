@@ -5,7 +5,6 @@ import cipher.restoreblock.Runnable.RestoreOnStop;
 import cipher.restoreblock.commands.RBCommands;
 import cipher.restoreblock.events.V_1_8;
 import cipher.restoreblock.network.Metrics;
-import cipher.restoreblock.network.UpdateChecker;
 import cipher.restoreblock.utils.Info;
 import cipher.restoreblock.ymlloader.Config;
 import org.bukkit.Bukkit;
@@ -89,19 +88,6 @@ public class Run {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
-	}
-
-	public void CheckUpdate(){
-
-		try {
-
-			Bukkit.getServer().getConsoleSender().sendMessage(Info.Color("&cChecking For Updates..."));
-			Bukkit.getServer().getConsoleSender().sendMessage(Info.Color(" "));
-			new UpdateChecker(javaPlugin).checkForUpdate();
-
-		} catch (Exception e) {
-
 		}
 	}
 

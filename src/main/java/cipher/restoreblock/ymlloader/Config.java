@@ -18,13 +18,11 @@ public class Config {
 		if (!(CFile).exists()) {
 
 			RB.saveResource("config.yml", false);
-
 		}
 	}
 
 	public static void reloadConfig() {
 
 		Configuration = YamlConfiguration.loadConfiguration(CFile);
-
 	}
 }

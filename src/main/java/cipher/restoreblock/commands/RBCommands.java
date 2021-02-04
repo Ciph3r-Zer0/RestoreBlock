@@ -20,9 +20,7 @@ public class RBCommands implements CommandExecutor, Listener {
 
 			sender.sendMessage(Info.Color(Info.Prefix + "&cRestoreBlock &b" + Info.Version + " &cBy &b" + Info.Author));
 			sender.sendMessage(Info.Color(Info.Prefix + "&b/RestoreBlock Help &8- &cFor More Details!"));
-
 			return true;
-
 		}
 
 		if(args.length == 1 && args[0].equalsIgnoreCase(SubCommand1)) {
@@ -31,9 +29,7 @@ public class RBCommands implements CommandExecutor, Listener {
 			sender.sendMessage(Info.Color(Info.Prefix + "&b/RestoreBlock  &cor &b/RB"));
 			sender.sendMessage(Info.Color(Info.Prefix + "&b/RestoreBlock Reload &8- &cTo Reload The Config File."));
 			sender.sendMessage(Info.Color("&8-------------------"));
-
 			return true;
-
 		}
 
 
@@ -43,15 +39,12 @@ public class RBCommands implements CommandExecutor, Listener {
 
 				Config.reloadConfig();
 				sender.sendMessage(Info.Color(Info.Prefix + "&cReload Successful."));
-
 				return true;
 
 			} else {
 
 				sender.sendMessage(Info.Color(Info.Prefix + "&cCould Not Initiate Reload, Reason : &bInsufficient Permission!"));
-
 				return true;
-
 			}
 		}
 		return false;

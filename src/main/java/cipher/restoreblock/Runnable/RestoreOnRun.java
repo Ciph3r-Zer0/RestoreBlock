@@ -32,7 +32,6 @@ public class RestoreOnRun extends BukkitRunnable implements Listener {
 
 				break_entry.getKey().update(true, false);
 				Break_list.remove(i);
-
 			}
 		}
 
@@ -45,7 +44,6 @@ public class RestoreOnRun extends BukkitRunnable implements Listener {
 
 				Place_entry.getKey().setType(Material.AIR);
 				Place_list.remove(i);
-
 			}
 		}
 
@@ -58,7 +56,6 @@ public class RestoreOnRun extends BukkitRunnable implements Listener {
 
 				Burn_entry.getKey().update(true, false);
 				Burn_list.remove(i);
-
 			}
 		}
 
@@ -73,7 +70,6 @@ public class RestoreOnRun extends BukkitRunnable implements Listener {
 
 					entry.getKey().update(true, false);
 					Explode_list.remove(i);
-
 				}
 			}
 		}
