@@ -28,6 +28,8 @@ public class V_1_8 implements Listener {
 	@EventHandler
 	public void onBreak(BlockBreakEvent event) {
 
+		if(event.isCancelled()) return;
+
 		Player player = event.getPlayer();
 		Block block = event.getBlock();
 		BlockState blockState = block.getState();
@@ -66,6 +68,8 @@ public class V_1_8 implements Listener {
 	@EventHandler
 	public void onPlace(BlockPlaceEvent event) {
 
+		if(event.isCancelled()) return;
+
 		Player player = event.getPlayer();
 		Block block = event.getBlock();
 		BlockState blockState = block.getState();
@@ -99,6 +103,8 @@ public class V_1_8 implements Listener {
 	@EventHandler
 	public void onBucketEmpty(PlayerBucketEmptyEvent event) {
 
+		if(event.isCancelled()) return;
+
 		Player player = event.getPlayer();
 		Block block = event.getBlockClicked().getRelative(event.getBlockFace());
 		Location loc = block.getLocation();
@@ -127,6 +133,8 @@ public class V_1_8 implements Listener {
 	@EventHandler
 	public void onBurn(BlockBurnEvent event) {
 
+		if(event.isCancelled()) return;
+
 		Block block = event.getBlock();
 		BlockState blockState = block.getState();
 		Material material = blockState.getType();
@@ -150,6 +158,8 @@ public class V_1_8 implements Listener {
 	 */
 	@EventHandler
 	public void onExplode(EntityExplodeEvent event) {
+
+		if(event.isCancelled()) return;
 
 		List<Block> blocks = event.blockList();
 		Long time = System.currentTimeMillis();
