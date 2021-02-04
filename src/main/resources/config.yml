@@ -6,6 +6,8 @@
 #|_|  \_\___||___/\__\___/|_|  \___| |____/|_|\___/ \___|_|\_\
 #Welcome To RestoreBlock Configuration Files.
 
+#Disables the SplashScreen showed in console when the plugin is loading.
+Disable-splash-screen: false
 
 Restore-Break:
   #Should Broken Blocks Get Restored?
@@ -61,6 +63,7 @@ Restore-Explosion:
   #After How Many Seconds Should Broken Block BE replaced?
   Delay: 5
   #Amount Of Time Between Every Block Regeneration
+  #MilliSeconds
   Block-Delay: 25
   #Should Broken Blocks Drop Items?
   Item-Drops: false

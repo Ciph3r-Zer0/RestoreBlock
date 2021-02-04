@@ -6,7 +6,7 @@
 
     <groupId>Cipher</groupId>
     <artifactId>RestoreBlock</artifactId>
-    <version>2.5</version>
+    <version>4.0</version>
     <packaging>jar</packaging>
 
     <name>RestoreBlock</name>

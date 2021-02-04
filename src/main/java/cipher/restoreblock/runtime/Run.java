@@ -22,21 +22,24 @@ public class Run {
 
 	public void splashScreen() {
 
-		Bukkit.getServer().getConsoleSender().sendMessage(Info.Color(" "));
-		Bukkit.getServer().getConsoleSender().sendMessage(Info.Color("&b_____           _                   ____  _            _"));
-		Bukkit.getServer().getConsoleSender().sendMessage(Info.Color("&b|  __ \\         | |                 |  _ \\| |          | |"));
-		Bukkit.getServer().getConsoleSender().sendMessage(Info.Color("&b| |__) |___  ___| |_ ___  _ __ ___  | |_) | | ___   ___| | __"));
-		Bukkit.getServer().getConsoleSender().sendMessage(Info.Color("&b|  _  // _ \\/ __| __/ _ \\| '__/ _ \\ |  _ <| |/ _ \\ / __| |/ /"));
-		Bukkit.getServer().getConsoleSender().sendMessage(Info.Color("&b| | \\ \\  __/\\__ \\ || (_) | | |  __/ | |_) | | (_) | (__|   <"));
-		Bukkit.getServer().getConsoleSender().sendMessage(Info.Color("&b|_|  \\_\\___||___/\\__\\___/|_|  \\___| |____/|_|\\___/ \\___|_|\\_\\"));
-		Bukkit.getServer().getConsoleSender().sendMessage(Info.Color(" "));
+		if(!(Config.Configuration.getBoolean("Disable-splash-screen"))) {
+
+			Bukkit.getServer().getConsoleSender().sendMessage(Info.Color(" "));
+			Bukkit.getServer().getConsoleSender().sendMessage(Info.Color("&b_____           _                   ____  _            _"));
+			Bukkit.getServer().getConsoleSender().sendMessage(Info.Color("&b|  __ \\         | |                 |  _ \\| |          | |"));
+			Bukkit.getServer().getConsoleSender().sendMessage(Info.Color("&b| |__) |___  ___| |_ ___  _ __ ___  | |_) | | ___   ___| | __"));
+			Bukkit.getServer().getConsoleSender().sendMessage(Info.Color("&b|  _  // _ \\/ __| __/ _ \\| '__/ _ \\ |  _ <| |/ _ \\ / __| |/ /"));
+			Bukkit.getServer().getConsoleSender().sendMessage(Info.Color("&b| | \\ \\  __/\\__ \\ || (_) | | |  __/ | |_) | | (_) | (__|   <"));
+			Bukkit.getServer().getConsoleSender().sendMessage(Info.Color("&b|_|  \\_\\___||___/\\__\\___/|_|  \\___| |____/|_|\\___/ \\___|_|\\_\\"));
+			Bukkit.getServer().getConsoleSender().sendMessage(Info.Color(" "));
+		}
 	}
 
 	public void detectVersion() {
 
 		try {
 
-			Bukkit.getServer().getConsoleSender().sendMessage(Info.Color("&cDetected Server Version: &b" + Info.ServerVersion));
+			Bukkit.getServer().getConsoleSender().sendMessage(Info.Color("&c[&b&lRS&c] Detected Server Version: &b" + Info.ServerVersion));
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -47,7 +50,7 @@ public class Run {
 
 		try {
 
-			Bukkit.getServer().getConsoleSender().sendMessage(Info.Color("&cPreparing Config Files."));
+			Bukkit.getServer().getConsoleSender().sendMessage(Info.Color("&c[&b&lRS&c] Preparing Config Files."));
 			Config.loadConfig();
 
 		} catch (Exception e) {
@@ -59,7 +62,7 @@ public class Run {
 
 		try {
 
-			Bukkit.getServer().getConsoleSender().sendMessage(Info.Color("&cRegistering Commands."));
+			Bukkit.getServer().getConsoleSender().sendMessage(Info.Color("&c[&b&lRS&c] Registering Commands."));
 			javaPlugin.getCommand(commands.MainCommand).setExecutor(commands);
 
 		} catch (Exception e) {
@@ -71,7 +74,7 @@ public class Run {
 
 		try {
 
-			Bukkit.getServer().getConsoleSender().sendMessage(Info.Color("&cRegistering Listeners."));
+			Bukkit.getServer().getConsoleSender().sendMessage(Info.Color("&c[&b&lRS&c] Registering Listeners."));
 			Bukkit.getServer().getPluginManager().registerEvents(new V_1_8(), javaPlugin);
 
 		} catch (Exception e) {
@@ -83,7 +86,7 @@ public class Run {
 
 		try {
 
-			Bukkit.getServer().getConsoleSender().sendMessage(Info.Color("&cRegistering Runnables."));
+			Bukkit.getServer().getConsoleSender().sendMessage(Info.Color("&c[&b&lRS&c] Registering Runnables."));
 			new RestoreOnRun().runTaskTimer(javaPlugin, 0, Config.Configuration.getInt("Check-Interval"));
 
 		} catch (Exception e) {

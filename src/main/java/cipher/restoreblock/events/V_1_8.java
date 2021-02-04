@@ -152,7 +152,7 @@ public class V_1_8 implements Listener {
 	public void onExplode(EntityExplodeEvent event) {
 
 		List<Block> blocks = event.blockList();
-		Long time = System.currentTimeMillis()/1000;
+		Long time = System.currentTimeMillis();
 		Location loc = event.getLocation();
 
 		blocks.sort(Comparator.comparingInt(Block::getY));
@@ -175,7 +175,7 @@ public class V_1_8 implements Listener {
 
 					if(!(Config.Configuration.getList("Restore-Explosion.Excluded-Materials").contains(material.toString()))){
 
-						RestoreOnRun.Explode_list.add(new AbstractMap.SimpleImmutableEntry<>(blockState, time));
+						RestoreOnRun.Explode_list.add(new AbstractMap.SimpleImmutableEntry<>(blockState, time/1000));
 					}
 				}
 			}
